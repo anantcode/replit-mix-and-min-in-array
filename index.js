@@ -14,22 +14,31 @@ Output:  Minimum element is: 3
 */
 
 
-function minMax(arr){
-
+function minMax(arr) {
   let min = arr[0];
   let max = arr[0];
 
-  for(let i=1; i<arr.length; i++){
-    if(min > arr[i]){
+  //handles when single value in array.
+  if (arr.length == 1) {
+    console.log("Max is: " + max);
+    console.log("Min is: " + min);
+    return;
+  }
+
+  for (let i = 1; i < arr.length; i++) {
+    if (min > arr[i]) {
       min = arr[i];
     }
-    if(max < arr[i]){
+    if (max < arr[i]) {
       max = arr[i];
     }
   }
 
-  console.log("Max is: "+ max);  
-  console.log("Min is: "+ min); 
+  console.log("Max is: " + max);
+  console.log("Min is: " + min);
 }
 
-minMax([1,2,3,4]);
+
+//Testing cases
+minMax([1, 2, 3, 4]);
+minMax([1]);
